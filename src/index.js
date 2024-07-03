@@ -13,9 +13,9 @@ import ListStudents from './Components/js.desing/ListOpitionsStudent/index.js'
 
 import AlunosClass from './Components/js.desing/AlunoDashVerAula'
 import ActivityAluno from './Components/js.desing/AlunoVerAtividadeDash/index.js' 
-import AssistirAula from './Components/js.desing/AlunoDashVerAula/ModalVerAula/AsistirCurso/index.js';
+import AssistirAula from './Components/js.desing/AlunoDashVerAula/index.js';
 import VerCursos from './Components/js.desing/AlunoVerCursos/index.js'
-import IrParaAtividade from './Components/js.desing/AlunoVerAtividadeDash/ModalVerAtividade/ModaIrParaAtv/index.js'
+import IrParaAtividade from './Components/js.desing/AlunoVerAtividadeDash/index.js'
 
 import ProfessorActivity from './Components/js.desing/ProfessorDashPostarAtividade'
 import ProfessorClass from './Components/js.desing/ProfessorDashPostarAula';
@@ -40,11 +40,11 @@ const router = createBrowserRouter([
         },
         {
           path:"/teacher/class",
-       element: <ProfessorClass NomeCardUm="Cursos Criados" acao="Postar ou Editar Atividades" NomeCardDois="Grafico de Alunos"/>
+       element: <ProfessorClass/>
         },
         {
           path:"/teacher/activity",
-       element: <ProfessorActivity NomeCardUm="Cursos Criados" acao="Postar ou Editar Atividades" NomeCardDois="Grafico de Alunos"/>
+       element: <ProfessorActivity />
         },
         {
           path:"/teacher/courses",
@@ -66,7 +66,7 @@ const router = createBrowserRouter([
         },
         {
           path:"/students/class",
-       element: <AlunosClass NomeCardUm="Cursos Criados" acao="Postar ou Editar Atividades" NomeCardDois="Grafico de Alunos"/>,
+       element: <AlunosClass/>,
         },   
         {
             path:"/students/watch",

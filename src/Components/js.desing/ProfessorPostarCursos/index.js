@@ -19,7 +19,6 @@ export default function VerClass(params){
     }, []);
     return (
         <section className={style.conteudo}>
-            <h1 className={style.titulo}>{params.Titulo}</h1>
             <div className={style.conteudocards}>
                 <div className={style.CardUm}>
                     <h1 className={style.nome}>CURSOS CADASTRADOS</h1>
@@ -30,11 +29,16 @@ export default function VerClass(params){
                         })}
                 </div>
                 <div className={style.CardDois}>
-                    <button className={style.acao}onClick={()=> setOpenModal(true)}>Veja ou cadastre-se em novas aualas</button>
+                    <button className={style.poste_curso}>POSTE UM CURSO</button>
                 </div>
             </div>
             <div className={style.CardTres}>
-                <h1 className={style.NomeCardDois}>Cursos Realizados</h1>
+                <h1 className={style.nome_cardTres}>EDITE SEUS CURSOS</h1>
+                <div className={style.cursoeditar}>
+                    <a className={style.titulocurso}>CURSO A</a>
+                    <button className={style.botaoeditar}>Editar</button>
+                    <button className={style.botaoapagar} >Apagar</button>
+                </div>
             </div>
         </section>
     );

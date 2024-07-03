@@ -4,8 +4,8 @@ import { useState } from 'react';
 import { useEffect } from "react";
 
 export default function VerClass() {
-    const [openModal,setOpenModal] = useState(false) 
-   
+    const [openModal, setOpenModal] = useState(false)
+
     // API para buscar todos os cursos
     const [post, setPost] = useState([]);
     useEffect(() => {
@@ -17,28 +17,33 @@ export default function VerClass() {
                 console.log('Erro ao buscar os cursos');
             });
     }, []);
+    //###########################################################
 
-    
     return (
         <section className={style.conteudo}>
             <div className={style.conteudocards}>
                 <div className={style.CardUm}>
-                    <h1 className={style.nome}>Cursos Cadastrados</h1>
-                    {post.map((course, key4) => {
-                        return (
-                            <div className={style.verconteiner} key={key4}>
-                                <a className={style.itens}>{course.courseName}</a>
-                            </div>
-                        );
-                    })}
+                    <h1 className={style.nome_cardUm}>Cursos Cadastrados</h1>
+                    <div className={style.cursoscadastrados}>
+                        <a className={style.itens}>aaaaaaaaa</a>
+                        <button className={style.botaovercursoaberto}>Ver Curso</button>
+                    </div>
+                        {post.map((course, key4) => {
+                            return (
+                                <div className={style.verconteiner} key={key4}>
+                                    <a className={style.itens}>{course.courseName}</a>
+                                </div>
+                            );
+                        })}
+                    </div>
                 </div>
                 <div className={style.CardDois}>
-                    <button className={style.acao}onClick={()=> setOpenModal(true)}>Veja ou cadastre-se em novas aualas</button>
+                    <h1 className={style.nome_cardDois}>PROCURE CURSPS</h1>
+                    <div className={style.vercurso}>
+                        <a className={style.titulocurso}>CURSO NOME</a>
+                        <button className={style.botaovercurso}>Ver Curso</button>
+                    </div>
                 </div>
-            </div>
-            <div className={style.CardTres}>
-                <h1 className={style.NomeCardDois}>Cursos Realizados</h1>
-            </div>
         </section>
     );
 };

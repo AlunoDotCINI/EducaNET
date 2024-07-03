@@ -3,8 +3,7 @@ import { useState } from 'react';
 import { useEffect } from "react";
 import api from "../../Service/api";
 
-export default function PostClass(){
-    const [openModal,setOpenModal] = useState(false) 
+export default function PostClass() {
 
     //api todos cursos
     const [post, setPost] = useState([]);
@@ -18,24 +17,29 @@ export default function PostClass(){
                 console.log('Erro ao buscar os cursos');
             });
     }, []);
-
+    //#################################
     return (
         <section className={style.conteudo}>
             <div className={style.conteudocards}>
                 <div className={style.CardUm}>
-                    <h1 className={style.nome}>Cursos Postados</h1>
+                    <h1 className={style.nome_cardUm}>EDITE SUAS VIDEO AULAS</h1>
                     {post.map((course, key) => {
-                            return (
-                                <a className={style.itens}>{course.courseName}</a>
-                            );
-                        })}
+                        return (
+                            <a className={style.itens}>{course.courseName}</a>
+                        );
+                    })}
                 </div>
                 <div className={style.CardDois}>
-                    <button className={style.acao}onClick={()=> setOpenModal(true)}>POSTE AULAS AQUI</button>
+                    <button className={style.poste_videoaulas}>POSTE SUAS VIDEO AULAS AQUI</button>
                 </div>
             </div>
             <div className={style.CardTres}>
-                <h1 className={style.NomeCardDois}></h1>
+                <h1 className={style.nome_cardTres}>EDITE SUAS VIDEO AUALAS</h1>
+                <div className={style.videoeditar}>
+                    <a className={style.titulovideoaula}>VIDEO AULA NOME</a>
+                    <button className={style.botaoeditar}>Editar</button>
+                    <button className={style.botaoapagar} >Apagar</button>                
+                </div>
             </div>
         </section>
     );
